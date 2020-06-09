@@ -36,14 +36,14 @@
  	<a href="/feedback.php">Связаться</a>
  	<?php if(isset($_SESSION['login'])) { ?><a href="/signin.php">Личный кабинет</a><?php } else { ?> <a href="/signin.php">Войти</a><?php }  ?>
 </div>
-<div class="us">
+<div class="us blue">
 	<div class="us-content" >
 		<h1>Результаты теста</h1>
 		<p>Пожалуйста, не стесняйтесь, и присылайте нам ваши вопросы, комментарии или предложения, - мы читаем каждое письмо, и хотели бы услышать ваши мнения. Извините, но в данный момент мы можем отвечать только на сообщения на английском языке.</p>
 	</div>
 	<img class="usImg" src="https://image.flaticon.com/icons/svg/2958/2958889.svg">
 </div>
-<div class="us pink">
+<div class="us peach">
 	<div class="us-content" >
 		<?php if (!isset($_SESSION['login'])) { ?>
 			<h1>Вы не авторизовались</h1>
