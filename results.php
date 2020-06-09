@@ -43,7 +43,7 @@
 	</div>
 	<img class="usImg" src="https://image.flaticon.com/icons/svg/2958/2958889.svg">
 </div>
-<div class="us">
+<div class="us pink">
 	<div class="us-content" >
 		<?php if (!isset($_SESSION['login'])) { ?>
 			<h1>Вы не авторизовались</h1>
