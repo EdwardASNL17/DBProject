@@ -55,7 +55,7 @@
 
 		  ?>
 		<h1>Личность <?php echo "$psycho_type";  ?></h1>
-		<p><i><?php echo "$psycho_citata";  ?></i></p>
+		<p class="citata"><i><?php echo "$psycho_citata";  ?></i></p>
 		<br>
 		<p><?php echo "$psycho_opis";  ?></p>
 	<?php }  ?>
