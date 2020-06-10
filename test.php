@@ -28,23 +28,68 @@
        	}
        	  if (isset($_POST) && isset($_SESSION['login'])) {
        	  	$mistakes = 0;
-       	  	$type= 0;
+       	  	$strateg= 0;
+                  $posrednick = 0;
+                  $admin = 0;
+                  $virtuoz = 0;
        	  	for ($j=0; $j < $rows; $j++) 
        	  	{
 
        	  		if (isset($_POST["answer$j"])) 
        	  		{
-       	  			if ($_POST["answer$j"] == "Да") {
-       	  				$type+=2;
-       	  			}
-       	  			else if ($_POST["answer$j"] == "Нет") {
-       	  				$type-=2;
-
-       	  			}
-       	  			else
-       	  			{
-       	  				$type--;
-       	  			}
+       	  			switch ($j) 
+                              {
+                                    case 0:
+                                    case 1:
+                                    case 3:
+                                    case 4:
+                                    case 8:
+                                    case 10:
+                                    case 12:
+                                    case 15:
+                                    case 19:
+                                    switch ($_POST["answer$j"]) {
+                                                case 'Да':
+                                                  $posrednick+=2;
+                                                break;
+                                                case 'Мб':
+                                                  $posrednick++;
+                                                  
+                                                break;
+                                                case 'Нет':
+                                                  $admin+=2; 
+                                                break;
+                                                
+                                          }      
+                                    break;
+                                    case 2:
+                                    case 5:
+                                    case 6:
+                                    case 7:
+                                    case 9:
+                                    case 11:
+                                    case 13:
+                                    case 14:
+                                    case 16:
+                                    case 17:
+                                    case 18:
+                                    switch ($_POST["answer$j"]) {
+                                                case 'Да':
+                                                  $strateg+=2;
+                                                break;
+                                                case 'Мб':
+                                                  $posrednick++;
+                                                  
+                                                break;
+                                                case 'Нет':
+                                                  $virtuoz+=2; 
+                                                break;
+                                                
+                                          }      
+                                    break;
+                                    
+                        
+                              }
        	  		}
        	  		else
        	  		{
@@ -57,15 +102,15 @@
        	  	else
        	  	{
        	  		$sms="Ваша заявка успешно отправлена";
-       	  		if ($type >= 5) {
+       	  		if ($strateg > $virtuoz && $strateg > $posrednick && $strateg > $admin) {
        	  			$type_id = 0;
        	  			
        	  		}
-       	  		else if ($type > 0 && $type < 5)
+       	  		else if ($posrednick > $virtuoz && $posrednick > $strateg && $posrednick > $admin)
        	  		{
        	  			$type_id = 1;
        	  		}
-       	  		else if ($type == 0) {
+       	  		else if ($admin > $virtuoz && $admin > $posrednick && $admin > $strateg) {
        	  			$type_id = 2;
        	  		}
        	  		else
