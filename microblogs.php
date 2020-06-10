@@ -57,20 +57,16 @@
 		</div>
 		<div class="shpk-container">
 				<div class="test-box" >
-					<img src="https://images.genius.com/481d3fe358aff3762168c7573ecf89f6.1000x1000x1.jpg">
-					<p>Бесплатный концерт лил кристины.</p>
+					<img src="https://image.flaticon.com/icons/svg/2540/2540832.svg">
+					
 				</div>
 				<div class="test-box" >
-					<img src="https://image.flaticon.com/icons/svg/552/552439.svg">
-					<p>Тест занимает менее 12 минут.</p>
+					<img src="https://image.flaticon.com/icons/svg/2944/2944381.svg">
+					
 				</div>
 				<div class="test-box" >
-					<img src="https://image.flaticon.com/icons/svg/552/552404.svg">
-					<p>Отвечайте честно (даже если вам не нравится ответ).</p>
-				</div>
-				<div class="test-box" >
-					<img src="https://image.flaticon.com/icons/svg/552/552411.svg">
-					<p>Постарайтесь не давать “нейтральных” ответов.</p>
+					<img src="https://image.flaticon.com/icons/svg/902/902706.svg">
+					
 				</div>
 			</div>
 	</div>	
@@ -120,8 +116,8 @@
 	</div>
 </div>
 <div class="footer">
-	<h3>©2011-2019 NERIS Analytics Limited</h3>
-	<p>Disclaimer: All non-English versions of the website contain unofficial translations contributed by our users. They are not binding in any way, are not guaranteed to be accurate, and have no legal effect. The official text is the English version of the website. Please consider reporting inaccuracies to support@16personalities.com or join our translation project!</p>
+	<h3>©2019-2020 EDUARD TYAN</h3>
+	
 	<div class="social-networks">
 		<a href="https://sun1-84.userapi.com/c205124/v205124810/ecfc/KILdVU9gQng.jpg"><img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/vk-256.png"></a>
 		<a href="https://sun1-84.userapi.com/c205124/v205124810/ecfc/KILdVU9gQng.jpg" target="_blank"><img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/facebook_circle_color-512.png"></a>
