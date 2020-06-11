@@ -1,12 +1,12 @@
 <?php
 	session_start();
  	require_once 'connection.php';
-	if (isset($_POST) && isset($_POST['login']) && isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['message']) && strlen($_POST['login'])>3) 
+	if (isset($_POST['subject']) && isset($_POST['message'])) 
 	{	
 		$link = mysqli_connect($host, $user, $password, $database) 
         or die("Ошибка " . mysqli_error($link)); 
-		$login=htmlentities(mysqli_real_escape_string($link,$_POST['login']));
-		$email=htmlentities(mysqli_real_escape_string($link,$_POST['email']));
+		$login=htmlentities(mysqli_real_escape_string($link,$_SESSION['login']));
+		$email=htmlentities(mysqli_real_escape_string($link,$_SESSION['email']));
 		$subject=htmlentities(mysqli_real_escape_string($link,$_POST['subject']));
 		$message=htmlentities(mysqli_real_escape_string($link,$_POST['message']));
 		$query="INSERT INTO feedback VALUES(NULL,'$login','$email','$subject','$message')";
@@ -64,24 +64,16 @@
 	</div>
 	<form class="opinion" method="POST" name="feedback">
 		<div class="group">
-			<label>Имя пользователя:</label>
-			<input type="text" placeholder="Имя" id="login" name="login">
-		</div>
-		<div class="group">
-		<label>Email:</label>
-		<input type="email" placeholder="Email" id="email" name="email">
-		</div>
-		<div class="group">
 		<label>Тема сообщения:</label>
-		<input type="text" placeholder="Тема сообщения" id="subject" name="subject">
+		<input type="text" placeholder="Тема сообщения" id="subject" name="subject" required="1">
 		</div>
 		<div class="group">
-		<textarea name="message" id="message" placeholder="Введите ваше сообщение"></textarea>
+		<textarea name="message" id="message" placeholder="Введите ваше сообщение" required="1"></textarea>
 		</div>
 		<div class="group">
 		<input type="submit" name="done" id="done" value="Отправить">
-		<?php  if ($sms && isset($_POST['login'])) {?><div class="allert"><?php echo $sms;?></div><?php } ?>
-		<?php  if ($fsms && isset($_POST['login'])) {?><div class="allert fail"><?php echo $fsms;?></div><?php }?>
+		<?php  if ($sms && isset($_POST['subject'])) {?><div class="allert"><?php echo $sms;?></div><?php } ?>
+		<?php  if ($fsms && isset($_POST['subject'])) {?><div class="allert fail"><?php echo $fsms;?></div><?php }?>
 		</div>
 		</form>
 

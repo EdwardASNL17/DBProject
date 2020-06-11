@@ -21,6 +21,7 @@
 				$id = $row[0];
 				$_SESSION['id'] = $row[0];
 				$_SESSION['avatar'] = $avatar;
+				$_SESSION['email'] = $row[1];
 				
 			}
 			else {
@@ -83,8 +84,8 @@
 			<?php if(!isset($_SESSION['login'])) { ?><h1>Войти</h1><?php }  ?>
 			<?php if(!isset($_SESSION['login'])) { ?><h2>или <a href="/signup.php">зарегистрироваться</a></h2><?php }  ?>
 			<?php if(isset($_SESSION['login'])) { ?><h2><?php echo $_SESSION['login'];?></h2><?php }  ?>
-			<?php if(isset($_SESSION['login'])) { ?><h2 class="logout"><a href="logout.php">Выйти</a></h2><?php }  ?>
 			<?php if(isset($_SESSION['login']) ) { ?><h2 class="logout"><a href="admin.php">Внести изменения</a></h2><?php }  ?>
+			<?php if(isset($_SESSION['login'])) { ?><h2 class="logout"><a href="logout.php">Выйти</a></h2><?php }  ?>
 
 			
 		</div>
@@ -108,7 +109,7 @@
 		<input type="text" placeholder="Тема сообщения" id="topic" name="topic">
 		</div>
 		<div class="group">
-		<textarea name="textblog" id="textblog" placeholder="Введите текст блога"></textarea>
+		<textarea name="textblog" id="textblog" placeholder="Введите текст блога" required="1"></textarea>
 		</div>
 		<div class="group">
 		<label>Прикрепить фото:</label>

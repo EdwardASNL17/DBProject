@@ -157,6 +157,7 @@
  		<?php if (!isset($_SESSION['login'])) { ?><a href="/signin.php">Войти</a><?php } ?>
  		<?php if (isset($_SESSION['login'])) { ?><a href="/signin.php">Личный кабинет</a><?php } ?>
 	</div>
+	<a name="top"></a>
 	<div class="shpk-test">
 		<div class="text-content">
 			<h1 ><?php echo $test_name;  ?></h1>
@@ -183,6 +184,7 @@
 	</div>
 	<?php if(isset($_SESSION['login'])) {  ?>
 		<div class="test-quest">
+			<a href="#top" class="upboard red"></a>
 			<form method="POST" name="test" class="testform">
 				<?php for($i=0;$i<$rows;$i++) { ?>
 					<div class="questions">

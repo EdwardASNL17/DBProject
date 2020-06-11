@@ -24,7 +24,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Связаться с нами</title>
+	<title>Результаты</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>

@@ -35,7 +35,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Тест</title>
+	<title>Микроблоги</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -49,10 +49,10 @@
  		<?php if (!isset($_SESSION['login'])) { ?><a href="/signin.php">Войти</a><?php } ?>
  		<?php if (isset($_SESSION['login'])) { ?><a href="/signin.php">Личный кабинет</a><?php } ?>
 	</div>
-<a name="top"></a>
+
 <div class="shpk-test shpk-blue">
 		<div class="text-content">
-			<h1 >Микроблог</h1>
+			<h1 >Микроблоги</h1>
 			<h3></h3>
 		</div>
 		<div class="shpk-container">
@@ -74,7 +74,7 @@
 	<a href="#top" class="upboard"></a>
 	<div class="blogs-container">
 		<?php for($i=$count-1;$i>=0;$i--) {
-			if ($blog_image[$i] != "" && strlen($blog_text[$i]) > 1500 ) { ?>
+			if ($blog_image[$i] != "" && strlen($blog_text[$i]) > 500 ) { ?>
 				<div class="blog-with-image-top">
 				<img src="<?php echo $blog_image[$i] ?>">
 				<div class="text-content">
