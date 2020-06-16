@@ -15,6 +15,7 @@
     		$psycho_type = $row[1];
     		$psycho_citata = $row[2];
     		$psycho_opis = $row[3];
+    		$psycho_author = $row[4];
     }
     
     	}
@@ -56,6 +57,7 @@
 		  ?>
 		<h1>Личность <?php echo "$psycho_type";  ?></h1>
 		<p class="citata"><i><?php echo "$psycho_citata";  ?></i></p>
+		<p class="author"><?php echo "$psycho_author";  ?></p>
 		<br>
 		<p><?php echo "$psycho_opis";  ?></p>
 	<?php }  ?>
