@@ -41,7 +41,17 @@
 		$log=htmlentities(mysqli_real_escape_string($link,$_SESSION['login']));
 		$topic=htmlentities(mysqli_real_escape_string($link,$_POST['topic']));
 		$textblog=htmlentities(mysqli_real_escape_string($link,$_POST['textblog']));
-		$photo=htmlentities(mysqli_real_escape_string($link,$_POST['photo']));
+		if (isset($_FILES['photo'])) {
+			$name = $_FILES['photo']['name'];
+			$tmp_name = $_FILES['photo']['tmp_name'];
+			move_uploaded_file($tmp_name,"uploads/".$name);
+			$photo = "uploads/".$name;
+			$photo=htmlentities(mysqli_real_escape_string($link,$photo));
+		}
+		else
+		{
+			$photo=htmlentities(mysqli_real_escape_string($link,""));
+		}
 		
 		$query="INSERT INTO blogs VALUES(NULL,'$log','$topic','$textblog','$photo')";
 		$result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link)); 
@@ -103,7 +113,7 @@
 		<h1>Микроблог</h1>
 		<p>Расскажите, о чем хотите</p>
 	</div>
-	<form class="opinion" method="POST" name="addblog">
+	<form class="opinion" method="POST" name="addblog" enctype="multipart/form-data">
 		<div class="group">
 		<label>Тема сообщения:</label>
 		<input type="text" placeholder="Тема сообщения" id="topic" name="topic">
@@ -113,7 +123,7 @@
 		</div>
 		<div class="group">
 		<label>Прикрепить фото:</label>
-		<input type="text" placeholder="Введите ссылку" id="photo" name="photo">
+		<input type="file" placeholder="Введите ссылку" id="photo" name="photo">
 		</div>
 		<div class="group">
 		<input type="submit" name="done" id="done" value="Отправить">

@@ -19,11 +19,15 @@
     $query ="DELETE FROM users WHERE login = '$del_user'";
     $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
  	}
- 	if(isset($_POST['ava_change']) && $_POST['ava_change']!=''){
+ 	if(isset($_FILES['ava_change'])){
+ 	$name = $_FILES['ava_change']['name'];
+	$tmp_name = $_FILES['ava_change']['tmp_name'];
+	move_uploaded_file($tmp_name,"uploads/".$name);
+	$photo = "uploads/".$name;
  
 	$link = mysqli_connect($host, $user, $password, $database) 
             or die("Ошибка " . mysqli_error($link)); 
-    $ava_change = mysqli_real_escape_string($link, $_POST['ava_change']);
+    $ava_change = mysqli_real_escape_string($link, $photo);
     $login = $_SESSION['login'];
      
     $query ="UPDATE users SET avatar='$ava_change' WHERE login='$login'";
@@ -52,7 +56,7 @@
 	<div >
 		<h1>Выберите действие</h1>
 		
-		<form class="opinion adm" method="POST" name="feedback">
+		<form class="opinion adm" method="POST" name="feedback" enctype="multipart/form-data">
 		<?php if(isset($_SESSION['login']) && $_SESSION['login'] == 'EdwardASNL17') { ?>	
 		<div class="group">
 			<label>Удалить пользователя:</label>
@@ -65,7 +69,7 @@
 		<?php }  ?>
 		<div class="group">
 			<label>Изменить аватарку:</label>
-			<input type="text" placeholder="Вставьте ссылку" id="ava_change" name="ava_change">
+			<input type="file" placeholder="Вставьте ссылку" id="ava_change" name="ava_change">
 		</div>
 		<div class="group">
 		<input type="submit" name="done" id="done" value="Отправить">
