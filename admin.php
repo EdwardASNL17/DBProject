@@ -1,7 +1,7 @@
 <?php
   session_start();
   require_once 'connection.php';
-  if (isset($_POST['del_user']) or isset($_POST['add_q']) or isset($_POST['ava_change']))  {
+  if (isset($_POST['del_user']) or isset($_POST['add_q']) or isset($_POST['ava_change']) or isset($_FILES['ava_change']))  {
   	$link = mysqli_connect($host, $user, $password, $database) 
         or die("Ошибка " . mysqli_error($link));
   	if (isset($_POST['add_q']) && $_POST['add_q']!='') {
@@ -36,6 +36,24 @@
   	mysqli_close($link);
   	
   }
+   if ($_SESSION['login'] == "EdwardASNL17") {
+  	$link = mysqli_connect($host, $user, $password, $database) 
+        or die("Ошибка " . mysqli_error($link));
+    $query= "SELECT * from predlojka";
+    $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
+    $rows=mysqli_num_rows($result);
+    $logins = array();
+    $titles = array();
+    $blogtexts = array();
+    $images = array();
+    for ($i=0; $i < $rows ; $i++) { 
+    	$row = mysqli_fetch_row($result);
+    	$logins[$i] = $row[1];
+    	$titles[$i] = $row[2];
+    	$blogtexts[$i] = $row[3];
+    	$images[$i] = $row[4];
+    }
+ 	}
 ?>
 <!DOCTYPE html>
 <html>
@@ -77,6 +95,24 @@
 		</form>
 	</div>
 	</div>
+	<div class="form blog">
+	<div>
+		<h1>Предложка</h1>
+		<p>Теперь вы контролируете контент</p>
+	</div>
+	<form class="opinion" method="POST" name="predlojka">
+		<?php for ($i=0; $i <$rows ; $i++) 
+		{ ?>
+				<h3><?php echo $titles[$i]; ?></h3>
+				<p><?php echo $blogtexts[$i]; ?></p>
+			<?php if ($images[$i] !== "")
+			{?>
+				<img src="<?php echo $images[$i];?>"  width="400px;">
+			<?php }?>
+		<?php }?>
+	</form>
+
+</div>
 <div class="footer">
 
 	<h3>©2019-2020 EDUARD TYAN</h3>

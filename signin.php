@@ -41,7 +41,7 @@
 		$log=htmlentities(mysqli_real_escape_string($link,$_SESSION['login']));
 		$topic=htmlentities(mysqli_real_escape_string($link,$_POST['topic']));
 		$textblog=htmlentities(mysqli_real_escape_string($link,$_POST['textblog']));
-		if (isset($_FILES['photo'])) {
+		if (isset($_FILES['photo']) && strlen($_FILES['photo']['name']) > 1) {
 			$name = $_FILES['photo']['name'];
 			$tmp_name = $_FILES['photo']['tmp_name'];
 			move_uploaded_file($tmp_name,"uploads/".$name);
@@ -53,10 +53,19 @@
 			$photo=htmlentities(mysqli_real_escape_string($link,""));
 		}
 		
-		$query="INSERT INTO blogs VALUES(NULL,'$log','$topic','$textblog','$photo')";
-		$result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link)); 
+		if ($_SESSION['login'] == "EdwardASNL17") {
+			$query="INSERT INTO blogs VALUES(NULL,'$log','$topic','$textblog','$photo')";
+			$result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link)); 
+			mysqli_close($link);
+		}
+		else
+		{
+			$query="INSERT INTO predlojka VALUES(NULL,'$log','$topic','$textblog','$photo')";
+			$result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link)); 
+			mysqli_close($link);
+		}
 
-		mysqli_close($link);	
+			
 		
 	}
 	if ($result) {
