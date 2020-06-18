@@ -32,8 +32,9 @@
      
     $query ="UPDATE users SET avatar='$ava_change' WHERE login='$login'";
     $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
+
  	}
-  	mysqli_close($link);
+  	
   	
   }
    if ($_SESSION['login'] == "EdwardASNL17") {
@@ -48,12 +49,27 @@
     $images = array();
     for ($i=0; $i < $rows ; $i++) { 
     	$row = mysqli_fetch_row($result);
+    	$predlID[$i]=$row[0];
     	$logins[$i] = $row[1];
     	$titles[$i] = $row[2];
     	$blogtexts[$i] = $row[3];
     	$images[$i] = $row[4];
     }
+    for ($i=0; $i < $rows ; $i++) { 
+    	if (isset($_POST["predl$i"])) 
+       	  		{
+       	  		   if ($_POST["predl$i"] == "Одобрить") {
+       	  		   	  
+       	  		   }
+       	  		   else if ($_POST["predl$i"] == "Отклонить") {
+       	  		   	 $query = "DELETE from predlojka WHERE id = $predlID[$i]";
+       	  		   	 $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
+       	  		   }
+       	  		}
+    }
+
  	}
+ 	 mysqli_close($link);
 ?>
 <!DOCTYPE html>
 <html>
@@ -100,16 +116,30 @@
 		<h1>Предложка</h1>
 		<p>Теперь вы контролируете контент</p>
 	</div>
-	<form class="opinion" method="POST" name="predlojka">
+	<form class="predl" method="POST" name="predlojka">
 		<?php for ($i=0; $i <$rows ; $i++) 
-		{ ?>
-				<h3><?php echo $titles[$i]; ?></h3>
-				<p><?php echo $blogtexts[$i]; ?></p>
+		{ ?>	<div class="predl-blog">
+					<div class="predl-text">
+					<h3><?php echo $titles[$i]; ?></h3>
+					<p><?php echo $blogtexts[$i]; ?></p>
+					</div>
 			<?php if ($images[$i] !== "")
 			{?>
-				<img src="<?php echo $images[$i];?>"  width="400px;">
+				<img src="<?php echo $images[$i];?>">
 			<?php }?>
+				</div>
+				<div class="predl-var">
+							<div class="btn-yes">
+								<input  type="radio" value="Одобрить" name="predl<?php echo $i ?>" id="yes-answer<?php echo $i ?>">
+            					<label for="yes-answer<?php echo $i ?>">Одобрить</label>
+            				</div>
+							<div class="btn-no">
+								<input type="radio" value="Отклонить" name="predl<?php echo $i ?>" id="no-answer<?php echo $i ?>">
+            					<label for="no-answer<?php echo $i ?>">Отклонить</label>
+            				</div>
+						</div>
 		<?php }?>
+		<input class="button" type="submit" name="predldone" id="predl" value="Отправить">
 	</form>
 
 </div>
