@@ -59,7 +59,10 @@
     	if (isset($_POST["predl$i"])) 
        	  		{
        	  		   if ($_POST["predl$i"] == "Одобрить") {
-       	  		   	  
+       	  		   	 $query="INSERT INTO blogs VALUES(NULL,'$logins[$i]','$titles[$i]','$blogtexts[$i]','$images[$i]')";
+       	  		   	 $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
+       	  		   	 $query = "DELETE from predlojka WHERE id = $predlID[$i]";
+       	  		   	 $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
        	  		   }
        	  		   else if ($_POST["predl$i"] == "Отклонить") {
        	  		   	 $query = "DELETE from predlojka WHERE id = $predlID[$i]";
@@ -67,9 +70,9 @@
        	  		   }
        	  		}
     }
-
+    mysqli_close($link);
  	}
- 	 mysqli_close($link);
+ 	 
 ?>
 <!DOCTYPE html>
 <html>
@@ -111,6 +114,7 @@
 		</form>
 	</div>
 	</div>
+	<?php if ($_SESSION['login'] == "EdwardASNL17") { ?>
 	<div class="form blog">
 	<div>
 		<h1>Предложка</h1>
@@ -143,6 +147,7 @@
 	</form>
 
 </div>
+<?php }  ?>
 <div class="footer">
 
 	<h3>©2019-2020 EDUARD TYAN</h3>
