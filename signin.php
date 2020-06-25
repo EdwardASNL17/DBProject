@@ -26,7 +26,6 @@
 			}
 			else {
 				echo "ERROR";
-				# code...
 			}
 
 			
@@ -130,15 +129,14 @@
 		<div class="group">
 		<textarea name="textblog" id="textblog" placeholder="Введите текст блога" required="1"></textarea>
 		</div>
-		<div class="group">
-		<label>Прикрепить фото:</label>
-		<input type="file" placeholder="Введите ссылку" id="photo" name="photo">
-		</div>
-		<div class="group">
-		<input type="submit" name="done" id="done" value="Отправить">
+	
+		<input type="file" placeholder="Введите ссылку" id="photo" name="photo" hidden>
+		<label for="photo" class="dbtn">Прикрепить фото</label>
+	
+		<input type="submit" name="done" id="done" value="Отправить" hidden>
+		<label for="done" class="dbtn">Отправить</label>
 		<?php  if ($sms && isset($_POST['textblog'])) {?><div class="allert"><?php echo $sms;?></div><?php } ?>
 		<?php  if ($fsms && isset($_POST['textblog'])) {?><div class="allert fail"><?php echo $fsms;?></div><?php }?>
-		</div>
 		</form>
 
 </div>

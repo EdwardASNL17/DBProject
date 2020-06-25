@@ -104,10 +104,10 @@
 		<input type="text" placeholder="вопрос" id="add_q" name="add_q">
 		</div>
 		<?php }  ?>
-		<div class="group">
-			<label>Изменить аватарку:</label>
-			<input type="file" placeholder="Вставьте ссылку" id="ava_change" name="ava_change">
-		</div>
+		
+			
+			<input type="file" placeholder="Вставьте ссылку" id="ava_change" name="ava_change" hidden>
+			<label for="ava_change" class="dbtn">Прикрепить фото</label>
 		<div class="group">
 		<input type="submit" name="done" id="done" value="Отправить">
 		</div>
@@ -120,6 +120,7 @@
 		<h1>Предложка</h1>
 		<p>Теперь вы контролируете контент</p>
 	</div>
+	<?php if ($rows>0) { ?>
 	<form class="predl" method="POST" name="predlojka">
 		<?php for ($i=0; $i <$rows ; $i++) 
 		{ ?>	<div class="predl-blog">
@@ -142,10 +143,13 @@
             					<label for="no-answer<?php echo $i ?>">Отклонить</label>
             				</div>
 						</div>
-		<?php }?>
-		<input class="button" type="submit" name="predldone" id="predl" value="Отправить">
-	</form>
 
+		<?php }?>
+		<input class="button m-top" type="submit" name="predldone" id="predl" value="Отправить">
+	</form>
+	<?php } else {  ?>
+	<p class="m-top">Записей нет</p>
+	<?php }  ?>
 </div>
 <?php }  ?>
 <div class="footer">

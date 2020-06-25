@@ -124,7 +124,7 @@
        	  		$sel_result = $result = mysqli_query($link, $sel_query) or die("Ошибка " . mysqli_error($link));
        	  		$sel_rows = mysqli_num_rows($sel_result);
        	  		if ($sel_rows == 0) {
-       	  			$test_query="INSERT INTO results VALUES(NULL, '1','$id','',$type_id)";
+       	  			$test_query="INSERT INTO results VALUES(NULL, '1','$id',$type_id)";
        				$result = mysqli_query($link, $test_query) or die("Ошибка " . mysqli_error($link));
        	  		}
        	  		else

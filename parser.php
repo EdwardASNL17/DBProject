@@ -1,5 +1,8 @@
+<?php
+session_start();
+if ($_SESSION['login'] == "EdwardASNL17") {
 
-<?php 
+
 include_once 'libs/simple_html_dom.php';
 require_once 'connection.php';
 //Сайт для парсинга
@@ -32,7 +35,7 @@ $headers = array();
 $sources = array();
 $articles = array();
 $images = array();
-for ($i=0; $i <= 3 ; $i++) 
+for ($i=0; $i < 3 ; $i++) 
 { 
 	
 	$url= "$links[$i]";
@@ -69,12 +72,19 @@ for ($i=0; $i <= 3 ; $i++)
 }
 $link = mysqli_connect($host, $user, $password, $database) 
         or die("Ошибка " . mysqli_error($link)); 
-for ($i=0; $i < count($headers)-1 ; $i++) { 
-	$query="INSERT INTO blogs VALUES(NULL,'EdwardASNL17','$headers[$i]','$articles[$i]','$images[$i]')";
+for ($i=0; $i <3 ; $i++) { 
+	
+	$query="INSERT INTO predlojka VALUES(NULL,'EdwardASNL17','$headers[$i]','$articles[$i]','$images[$i]')";
 		$result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link)); 
 }
 mysqli_close($link);
-
+header('Location:admin.php');
+exit();
+}
+else
+{
+	echo "ERROR";
+}
 
 /*foreach ($list as $key => $value) // Проходим все элементы в list
 { 
@@ -100,7 +110,3 @@ foreach ($lists as $key => $value)
 // print_r($html);
 // echo "</pre>";
 
-
-
-
-?>

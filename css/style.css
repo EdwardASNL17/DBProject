@@ -844,7 +844,7 @@ body{
 	position: relative;
 	right: 15%;
 }
-.testform .button
+.button
 {
 
     width: 400px;
@@ -857,6 +857,7 @@ body{
     border-radius: 3px;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+     outline: none;
 }
 .red
 {
@@ -897,14 +898,19 @@ body{
 .predl-var
 {
 	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
+	flex-direction: column;
+	justify-content: flex-start;
 	width: 50% !important;
+	min-height: 200px;
+	
 
 }
 .predl-var input
 {
 	display: none;
+
+
+	
 }
 .predl-var label
 {
@@ -921,10 +927,32 @@ body{
   	text-align: center;
   	margin-right:30px;
   	transition: box-shadow,color 0.3s ease;
+  	margin-bottom: 30px;
 
 }
 .predl-var input:checked ~ label
 {
 	box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.4);
   	color: #f1f1f1;
+
+}
+.m-top
+{
+	margin-top: 2%;
+}
+.dbtn
+{
+	display: block;
+	border:3px solid white;
+	width: 380px;
+	padding: 8px;
+	margin-top: 20px;
+	text-align: center;
+	border-radius: 20px;
+	transition: 0.25s ease;
+}
+.dbtn:hover
+{
+	background-color: white;
+	color: #60f0ad;
 }

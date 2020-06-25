@@ -12,7 +12,7 @@
 		$query="INSERT INTO feedback VALUES(NULL,'$login','$email','$subject','$message')";
 		$result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link)); 
 
-		mysqli_close($link);	
+		mysqli_close($link);
 	}
 	if ($result) {
 			$sms="Ваша заявка успешно отправлена";
