@@ -80,6 +80,7 @@
 	<title>Панель администратора</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+
 </head>
 <body>
  	<div class="header">
@@ -89,7 +90,7 @@
  		<a href="/feedback.php">Связаться</a>
  		<?php if(isset($_SESSION['login'])) { ?><a href="/signin.php">Личный кабинет</a><?php } else { ?> <a href="/signin.php">Войти</a><?php }  ?>
 	</div>
-	<div class="admin">
+	<div class="admin peach ">
 	<div >
 		<h1>Выберите действие</h1>
 		
@@ -103,19 +104,20 @@
 		<label>Добавить вопрос:</label>
 		<input type="text" placeholder="вопрос" id="add_q" name="add_q">
 		</div>
+		<a href="parser.php" class="dbtn peach-color dbtn-a">Парсер</a>
 		<?php }  ?>
 		
 			
-			<input type="file" placeholder="Вставьте ссылку" id="ava_change" name="ava_change" hidden>
-			<label for="ava_change" class="dbtn">Прикрепить фото</label>
-		<div class="group">
-		<input type="submit" name="done" id="done" value="Отправить">
-		</div>
+			<input type="file" placeholder="Вставьте ссылку" id="ava_change" name="ava_change"  class="inputfile"multiple>
+			<label for="ava_change" class="dbtn peach-color"><span>Изменить аватарку</span></label>
+			<input type="submit" name="done" id="done" value="Отправить" hidden>
+			<label for="done" class="dbtn peach-color">Отправить</label>
+
 		</form>
 	</div>
 	</div>
 	<?php if ($_SESSION['login'] == "EdwardASNL17") { ?>
-	<div class="form blog">
+	<div class="form blog blue">
 	<div>
 		<h1>Предложка</h1>
 		<p>Теперь вы контролируете контент</p>
@@ -127,11 +129,12 @@
 					<div class="predl-text">
 					<h3><?php echo $titles[$i]; ?></h3>
 					<p><?php echo $blogtexts[$i]; ?></p>
-					</div>
-			<?php if ($images[$i] !== "")
+					<?php if ($images[$i] !== "")
 			{?>
 				<img src="<?php echo $images[$i];?>">
 			<?php }?>
+					</div>
+			
 				</div>
 				<div class="predl-var">
 							<div class="btn-yes">
@@ -165,3 +168,4 @@
 </div>
 </body>
 </html>
+<script type="text/javascript" src="function.js"></script>

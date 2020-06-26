@@ -874,14 +874,16 @@ body{
 .predl-blog
 {
 	display: flex;
-	width: 80% !important;
+	flex-direction: column;
+	width: 100% !important;
 	margin-top: 2%;
 	margin-bottom: 2%;
 
 }
 .predl-blog img
 {
-	width: 30%;
+	width: 70%;
+
 	border-radius: 10px;
 }
 .predl-text
@@ -955,4 +957,21 @@ body{
 {
 	background-color: white;
 	color: #60f0ad;
+}
+.dbtn.peach-color:hover
+{
+	color:#FFA873;
+}
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.dbtn-a
+{
+	text-decoration: none;
+	color: #FFFF;
 }

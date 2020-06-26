@@ -130,8 +130,8 @@
 		<textarea name="textblog" id="textblog" placeholder="Введите текст блога" required="1"></textarea>
 		</div>
 	
-		<input type="file" placeholder="Введите ссылку" id="photo" name="photo" hidden>
-		<label for="photo" class="dbtn">Прикрепить фото</label>
+		<input type="file" placeholder="Введите ссылку" id="photo" name="photo" class="inputfile" multiple>
+		<label for="photo" class="dbtn"><span>Прикрепить фото</span></label>
 	
 		<input type="submit" name="done" id="done" value="Отправить" hidden>
 		<label for="done" class="dbtn">Отправить</label>
@@ -164,3 +164,4 @@
 
 </body>
 </html>
+<script type="text/javascript" src="function.js"></script>
