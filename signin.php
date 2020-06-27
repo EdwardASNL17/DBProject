@@ -104,14 +104,21 @@
 			<?php if(isset($_SESSION['login'])) { ?><h2><?php echo $_SESSION['login'];?></h2><?php }  ?>
 			<?php if(isset($_SESSION['login']) ) { ?><h2 class="logout"><a href="admin.php">Внести изменения</a></h2><?php }  ?>
 			<?php if(isset($_SESSION['login'])) { ?><h2 class="logout"><a href="logout.php">Выйти</a></h2><?php }  ?>
-
-			
+		<?php if(isset($_SESSION['login'])) { ?>
+		<div class="us-networks">
+			<a href="https://vk.com/edwardasnl17"><img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/vk-256.png"></a>
+			<a href="https://sun1-84.userapi.com/c205124/v205124810/ecfc/KILdVU9gQng.jpg" target="_blank"><img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/facebook_circle_color-512.png"></a>
+			<a href="https://sun1-84.userapi.com/c205124/v205124810/ecfc/KILdVU9gQng.jpg"><img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/twitter_circle_color-256.png"></a>	
+			<a href="https://www.instagram.com/chelovecksobackasho/"><img src="https://cdn2.iconfinder.com/data/icons/social-icons-33/128/Instagram-256.png"></a>
+		</div>
+		<?php } ?>	
 		</div>
 		<?php if(isset($_SESSION['login'])) { ?>
-		<div class="avatar">
-			<img src="<?php echo($_SESSION['avatar']) ?>">
+		<div class="user-menu">
+			<img class="avatar" src="<?php echo($_SESSION['avatar']) ?>">
+			
 		</div>
-
+		
 		<?php }  ?>
 
 	</div>

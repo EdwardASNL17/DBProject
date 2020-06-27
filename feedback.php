@@ -49,10 +49,10 @@
 		<h1>Свяжитесь с нами</h1>
 		<p>Пожалуйста, не стесняйтесь, и присылайте нам ваши вопросы, комментарии или предложения, - мы читаем каждое письмо, и хотели бы услышать ваши мнения. Извините, но в данный момент мы можем отвечать только на сообщения на английском языке.</p>
 		<div class="us-networks">
-			<a href="https://sun1-84.userapi.com/c205124/v205124810/ecfc/KILdVU9gQng.jpg"><img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/vk-256.png"></a>
+			<a href="https://vk.com/edwardasnl17"><img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/vk-256.png"></a>
 			<a href="https://sun1-84.userapi.com/c205124/v205124810/ecfc/KILdVU9gQng.jpg" target="_blank"><img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/facebook_circle_color-512.png"></a>
 			<a href="https://sun1-84.userapi.com/c205124/v205124810/ecfc/KILdVU9gQng.jpg"><img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/twitter_circle_color-256.png"></a>	
-			<a href="https://sun9-36.userapi.com/c857416/v857416091/10eec0/jbP01fnOD_I.jpg"><img src="https://cdn2.iconfinder.com/data/icons/social-icons-33/128/Instagram-256.png"></a>
+			<a href="https://www.instagram.com/chelovecksobackasho/"><img src="https://cdn2.iconfinder.com/data/icons/social-icons-33/128/Instagram-256.png"></a>
 		</div>
 	</div>
 	<img class="usImg animation-pic" src="https://visualpharm.com/assets/284/Last%2024%20Hours-595b40b75ba036ed117d853a.svg">
