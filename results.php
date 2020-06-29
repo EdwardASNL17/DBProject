@@ -35,7 +35,7 @@
  	<a href="/microblogs.php">Микроблоги</a>
  	<a href="/results.php">Результаты</a>
  	<a href="/feedback.php">Связаться</a>
- 	<?php if(isset($_SESSION['login'])) { ?><a href="/signin.php">Личный кабинет</a><?php } else { ?> <a href="/signin.php">Войти</a><?php }  ?>
+ 	<?php if(isset($_SESSION['login'])) { ?><a href="/profile.php">Личный кабинет</a><?php } else { ?> <a href="/signin.php">Войти</a><?php }  ?>
 </div>
 <div class="us blue">
 	<div class="us-content" >
