@@ -44,6 +44,7 @@
 			$fsms="Это ERROR";
 		}
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,10 +74,26 @@
 			<?php if(isset($_SESSION['login'])) { ?><h2 class="logout"><a href="logout.php">Выйти</a></h2><?php }  ?>
 		<?php if(isset($_SESSION['login'])) { ?>
 		<div class="us-networks">
+			<?php if (strlen($_SESSION['vk']) > 0) {?>
 			<a href="https://vk.com/edwardasnl17"><img src="https://cdn3.iconfinder.com/data/icons/capsocial-round/500/vk-256.png"></a>
+		<?php } else { ?>
+			<a href=""><img src="soc/vk.png"></a>
+		<?php }  ?>
+			<?php if (strlen($_SESSION['fb']) > 1) {?>
 			<a href="https://sun1-84.userapi.com/c205124/v205124810/ecfc/KILdVU9gQng.jpg" target="_blank"><img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/facebook_circle_color-512.png"></a>
-			<a href="https://sun1-84.userapi.com/c205124/v205124810/ecfc/KILdVU9gQng.jpg"><img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/twitter_circle_color-256.png"></a>	
+		<?php } else { ?>
+			<a href=""><img src="soc/fb.png"></a>
+		<?php }  ?>	
+			<?php if (strlen($_SESSION['tw']) > 1) {?>
+			<a href="https://sun1-84.userapi.com/c205124/v205124810/ecfc/KILdVU9gQng.jpg"><img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/twitter_circle_color-256.png"></a>
+		<?php } else { ?>
+			<a href=""><img src="soc/tw.png"></a>
+		<?php }  ?>	
+			<?php if (strlen($_SESSION['inst']) > 1) {?>
 			<a href="https://www.instagram.com/chelovecksobackasho/"><img src="https://cdn2.iconfinder.com/data/icons/social-icons-33/128/Instagram-256.png"></a>
+		<?php } else { ?>
+			<a href=""><img src="soc/inst.png"></a>
+		<?php }  ?>		
 		</div>
 		<?php } ?>	
 		</div>

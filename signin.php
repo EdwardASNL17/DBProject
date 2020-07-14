@@ -22,6 +22,10 @@
 				$_SESSION['id'] = $row[0];
 				$_SESSION['avatar'] = $avatar;
 				$_SESSION['email'] = $row[1];
+				$_SESSION['vk'] = $row[5];
+				$_SESSION['fb'] = $row[6];
+				$_SESSION['tw'] = $row[7];
+				$_SESSION['inst'] = $row[8];
 				header('Location:profile.php');
 				exit();
 				
