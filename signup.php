@@ -15,7 +15,7 @@
 			$email=htmlentities(mysqli_real_escape_string($link, $_POST['email']));
 			$hash_pass=md5($_POST['password']);
 			$password=htmlentities(mysqli_real_escape_string($link, $hash_pass));
-			$query="INSERT INTO users VALUES(NULL, '$email','$login','$password','$avatar')";
+			$query="INSERT INTO users VALUES(NULL, '$email','$login','$password','$avatar','','','','')"  or die("Ошибка " . mysqli_error($link));
 			$result = mysqli_query($link, $query);
 			if ($result == false ) {
 				echo "ERROR";

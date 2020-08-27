@@ -118,7 +118,6 @@
        	  			$type_id = 3;
        	  		}
        	  		$id=htmlentities(mysqli_real_escape_string($link, $_SESSION['id']));
-       	  		$opisanie=htmlentities(mysqli_real_escape_string($link, $opis));
        	  		$type_id =htmlentities(mysqli_real_escape_string($link, $type_id));
        	  		$sel_query = "SELECT * FROM results WHERE user_id = $id";
        	  		$sel_result = $result = mysqli_query($link, $sel_query) or die("Ошибка " . mysqli_error($link));
